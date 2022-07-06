@@ -7,8 +7,8 @@ interface ICountdown {
 }
 
 export const CuentaRegresiva = ({
-  hours = 0,
-  minutes = 0,
+  hours = 12,
+  minutes = 20,
   seconds = 60,
 }: ICountdown) => {
   const [time, setTime] = React.useState<ICountdown>({
