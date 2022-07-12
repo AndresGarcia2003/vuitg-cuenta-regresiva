@@ -1,54 +1,23 @@
 import React from 'react'
+import { CountdownTimer } from './countdownTimer';
+import { useCssHandles } from "vtex.css-handles";
+import './App.css'
 
-interface ICountdown {
-  hours: number
-  minutes: number
-  seconds: number
-}
-
-export const CuentaRegresiva = ({
-  hours = 12,
-  minutes = 20,
-  seconds = 60,
-}: ICountdown) => {
-  const [time, setTime] = React.useState<ICountdown>({
-    hours,
-    minutes,
-    seconds,
-  })
-
-  const tick = () => {
-    // eslint-disable-next-line @typescript-eslint/no-use-before-define
-    if (time.hours === 0 && time.minutes === 0 && time.seconds === 0) reset()
-    else if (time.hours === 0 && time.seconds === 0) {
-      setTime({ hours: time.hours - 1, minutes: 59, seconds: 59 })
-    } else if (time.seconds === 0) {
-      setTime({ hours: time.hours, minutes: time.minutes - 1, seconds: 59 })
-    } else {
-      setTime({
-        hours: time.hours,
-        minutes: time.minutes,
-        seconds: time.seconds - 1,
-      })
-    }
-  }
-
-  const reset = () =>
-    setTime({ hours: time.hours, minutes: time.minutes, seconds: time.seconds })
-
-  React.useEffect(() => {
-    const timerId = setInterval(() => tick(), 1000)
-
-    return () => clearInterval(timerId)
-  })
-
+export const CuentaRegresiva = () => {
+  const CSS_HANDLES = [
+    "App"
+  ]
+  const handles = useCssHandles(CSS_HANDLES)
   return (
-    <div>
-      <p>{`${time.hours
-        .toString()
-        .padStart(2, '0')}:${time.minutes
-        .toString()
-        .padStart(2, '0')}:${time.seconds.toString().padStart(2, '0')}`}</p>
+    <div className={handles["App"]}>
+        <div>
+            <CountdownTimer hours={15} minutes={20} seconds={40}/>
+        </div>
     </div>
   )
 }
+
+
+
+
+
