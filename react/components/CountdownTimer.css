@@ -40,14 +40,17 @@
 
 .countdown h1 {
   display: flex;
-  justify-content: center;
+  justify-content: right;
   width: 180px;
+  letter-spacing: 9px;
 }
 
 .countdown div {
   display: flex;
-  justify-content: center;
+  justify-content: right ;
   width: 180px;
+  letter-spacing: 1px;
+  text-indent: -1em;
 }
 
 .countdown p {

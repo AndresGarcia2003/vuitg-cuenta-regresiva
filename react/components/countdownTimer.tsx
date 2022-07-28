@@ -47,10 +47,10 @@ export const CountdownTimer= ({ targetDate, contentBanner, text, image }: Props)
         ${timeRemaining.days}:${timeRemaining.hours}:${timeRemaining.minutes}:${timeRemaining.seconds}`}
         </h1>
         <div>
-          <p>D</p>
-          <p>H</p>
-          <p>M</p>
-          <p>S</p>
+          <p>Days</p>
+          <p>Hours</p>
+          <p>Minutes</p>
+          <p>Seconds</p>
         </div>
       </div>
     </div>
