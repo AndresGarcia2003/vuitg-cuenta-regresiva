@@ -1,5 +1,5 @@
 {
   "cuenta-regresiva": {
-    "component": "CuentaRegresiva"
+    "component": "CountdownTimer"
   }
 }
